@@ -4,7 +4,12 @@
     "target": "es5",
     "module": "es6",
     "jsx": "react",
-    "noImplicitAny": true,
-    "allowSyntheticDefaultImports": true
-  }
+    "noImplicitAny": false,
+    "sourceMap": true,
+    "allowSyntheticDefaultImports": false,
+    "allowJs":true,
+  },
+  "exclude": [
+    "node_modules"
+  ]
 }

@@ -18,6 +18,13 @@ module.exports = {
 
   module: {
     rules: [
+      // All output '.js' files will have any sourcemaps re-processed by 'source-map-loader'.
+      {
+        enforce: "pre",
+        test: /\.js(x?)$/,
+        exclude: /node_modules/,
+        use: ["source-map-loader"]
+      },
       {
         test: /\.ts(x?)$/,
         exclude: /node_modules/,
@@ -27,12 +34,6 @@ module.exports = {
           }
         ]
       },
-      // All output '.js' files will have any sourcemaps re-processed by 'source-map-loader'.
-      {
-        enforce: "pre",
-        test: /\.js$/,
-        loader: "source-map-loader"
-      }
     ]
   },
 
@@ -41,7 +42,7 @@ module.exports = {
 
   resolve: {
     // Add '.ts' and '.tsx' as resolvable extensions.
-    extensions: ['.ts', '.tsx', '.js']
+    extensions: ['.ts', '.tsx', '.js', '.jsx']
   },
 
   plugins: [
